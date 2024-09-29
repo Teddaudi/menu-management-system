@@ -1,12 +1,15 @@
 services:
   dev-db:
     image: postgres:13
+    restart: always
     ports:
       - "5434:5432"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 123
       POSTGRES_DB: nest
+    volumes:
+      - dev-db-data:/var/lib/postgresql/data
     networks:
       - assign
 
@@ -18,8 +21,14 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 123
       POSTGRES_DB: nest
+    volumes:
+      - test-db-data:/var/lib/postgresql/data
     networks:
-      - assign    
+      - assign
 
 networks: 
   assign:
+
+volumes:
+  dev-db-data:
+  test-db-data:
