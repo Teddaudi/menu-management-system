@@ -3,8 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --main-bg-color: rgb(16, 23, 39);
-  --selected:rgb(160, 241, 70);
+
 }
 
+
+body {
+
+  font-family: Arial, Helvetica, sans-serif;
+}
 
